@@ -7,7 +7,7 @@
     "target": "es5",
     "jsx": "react",
     "allowJs": true,
-    "types" : ["core-js" ],
+    "types" : ["core-js"],
     "lib": ["es2015", "dom"]
   }
 }

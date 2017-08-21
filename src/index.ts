@@ -1,66 +1,55 @@
 import { Observable } from 'rxjs';
-import { Url } from './libs/url';
+import {serviceKeys } from './config/service-keys';
+import { HttpService } from './libs/services/http.service';
 import axios from 'axios';
 
+ export class Main{
 
- class Main{
+   private httpService: HttpService;
 
    constructor() {
+     this.requestSamples();
    }
 
-   static run(): void {
-
-
-     // test
-
-     // let Carousel = document.querySelector('#data-carousel div');
-     // Carousel.color = "#FFFF00";
-
-
-
-     // test
-
-
-     // example of using class from the libs folder
-     const url = new Url();
-
-     const googleSearchQueryParams = url.queryParamsToObject('https://www.google.com/search?q=typescript+configurations&oq=typescript+configurations&aqs=chrome..69i57.6206j1j8&sourceid=chrome&ie=UTF-8');
-
-
-     const welcomeTitle = `Welcome to Evolution`;
-
+   public run(): void {
+     const welcomeTitle = `Welcome to Evolution - Learning New Things`;
      document.querySelector('#welcome-title').innerHTML = welcomeTitle;
+   }
 
-     // Simple example of an Observable
-     const simpleRxjsExample$: Observable<number> = Observable.from([1, 2, 3, 4])
-       .map(number => number + 1)
-       .take(1);
+   public requestSamples(): void {
+     this.httpService = new HttpService();
 
-       simpleRxjsExample$
-       .subscribe(result => {
-         document.querySelector('#simple-rxjs-example').innerHTML = `
-         // Simple example of an Observable
-         const simpleRxjsExample$ = Observable.from([1, 2, 3, 4])
-         .map(number => number + 1)
-         .take(1);
-              
-         Value of the observable is : ${result}
+     // Get Samples
 
-         Result returned from the Url.queryParamsToObject() method:
-         ${googleSearchQueryParams}`;
-       });
+     // 200 success
+     this.httpService
+      .get(serviceKeys['getArticles'].url)
+      .then(data => console.log('200 ok, successful get request:', data))
+      .catch(error => {
+        console.error(error)
+      });
 
-     //axios xhr get request
-     axios.get('/llane.java.api/getArticles')
-     .then(function (response) {
-       console.log(response);
+     // Post Samples
+
+     // 201 created
+     this.httpService
+     .post(
+       serviceKeys['postArticle'].url,
+       {
+         title: 'foo',
+         body: 'bar',
+         userId: 1
+       }
+     )
+     .then(data => {
+       console.log('201 created, successful post request: ', data);
      })
-     .catch(function (error) {
-       console.log(error);
+     .catch(error => {
+       console.error(error)
      });
 
    }
 
  }
 
- Main.run();
+ const main = new Main().run();
