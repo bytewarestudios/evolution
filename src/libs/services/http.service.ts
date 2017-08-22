@@ -1,5 +1,3 @@
-import {Promise} from 'es6-promise';
-
 export class HttpService {
 
   constructor() {
@@ -82,5 +80,3 @@ export class HttpService {
   }
 
 }
-
-
