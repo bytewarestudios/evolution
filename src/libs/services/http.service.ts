@@ -42,7 +42,7 @@ export class HttpService {
     });
   }
 
-  private createPayloadFromObject(requestParams: Object): string {
+  public createPayloadFromObject(requestParams: Object): string {
     let keyValuePairs = [];
 
     if (requestParams) {
@@ -60,7 +60,7 @@ export class HttpService {
     return '';
   }
 
-  private queryParamsToString(queryParams: Array<Object>): string {
+  public queryParamsToString(queryParams: Array<Object>): string {
     let keyValuePairs = [];
 
     if(queryParams) {

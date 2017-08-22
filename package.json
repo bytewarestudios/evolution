@@ -3,11 +3,23 @@
   "version": "1.0.0",
   "description": "A frontend end system designed to help build web applicaitions quickly",
   "main": "",
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
+  },
   "scripts": {
     "start": "npm run start:dev",
     "start:dev": "npm run build:dev && webpack-dev-server --open --inline --hot --content-base dist/ --port=3000",
     "start:prod": "npm run build:prod && webpack-dev-server --open --content-base dist/  --port=3000",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build:dev": "webpack",
     "build:prod": "webpack --optimize-minimize ./src/index.ts"
   },
@@ -16,6 +28,7 @@
   "devDependencies": {
     "@types/core-js": "^0.9.36",
     "@types/es6-promise": "0.0.32",
+    "@types/jest": "^20.0.7",
     "babel": "^6.23.0",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
@@ -24,11 +37,13 @@
     "babel-register": "^6.24.1",
     "css-loader": "^0.28.1",
     "extract-text-webpack-plugin": "^2.1.0",
+    "jest": "^20.0.4",
     "lodash": "^4.17.4",
     "node-sass": "^4.5.2",
     "open-browser-webpack-plugin": "0.0.5",
     "rxjs": "^5.4.0",
     "sass-loader": "^6.0.5",
+    "ts-jest": "^20.0.10",
     "ts-loader": "^2.1.0",
     "typescript": "^2.3.3",
     "webpack": "^2.5.1",
