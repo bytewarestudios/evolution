@@ -49,7 +49,7 @@ export class HttpService {
 
       for (let requestParam in requestParams) {
         if (requestParams.hasOwnProperty(requestParam)) {
-          keyValuePairs.push(encodeURIComponent(requestParam) + "=" + requestParams[encodeURIComponent(requestParam)]);
+          keyValuePairs.push(encodeURIComponent(requestParam) + '=' + requestParams[encodeURIComponent(requestParam)]);
         }
       }
 
@@ -68,7 +68,7 @@ export class HttpService {
     queryParams.map(queryParams => {
       for (let queryParam in queryParams) {
         if (queryParams.hasOwnProperty(queryParam)) {
-          keyValuePairs.push(encodeURIComponent(queryParam) + "=" + queryParams[encodeURIComponent(queryParam)]);
+          keyValuePairs.push(encodeURIComponent(queryParam) + '=' + queryParams[encodeURIComponent(queryParam)]);
         }
       }
     });

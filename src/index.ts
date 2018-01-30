@@ -3,6 +3,13 @@ import {serviceKeys } from './config/service-keys';
 import { HttpService } from './libs/services/http.service';
 import axios from 'axios';
 
+import { myContainer } from './ioc/inversify.config';
+import { TYPES } from './ioc/types';
+import { IUrl } from './ioc/interfaces/url.interface';
+
+const url = myContainer.get<IUrl>(TYPES.Url);
+
+
  export class Main{
 
    private httpService: HttpService;
@@ -14,6 +21,8 @@ import axios from 'axios';
    public run(): void {
      const welcomeTitle = `Welcome to Evolution - Learning New Things`;
      document.querySelector('#welcome-title').innerHTML = welcomeTitle;
+
+     console.log('query params: ', url.queryParamsToObject(window.location.href));
    }
 
    public requestSamples(): void {
