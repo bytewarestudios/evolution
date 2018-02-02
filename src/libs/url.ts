@@ -1,13 +1,16 @@
-/**
- * Created by larrylane on 5/12/17.
- */
-export class Url {
+import { injectable, inject } from 'inversify';
+import 'reflect-metadata';
+import { IUrl } from '../ioc/interfaces/url.interface';
+import { TYPES } from '../ioc//types';
+
+@injectable()
+export class Url implements IUrl{
 
   /**
    * Converts query params to an object
    */
   queryParamsToObject(url: string): JSON {
-
+   console.log('url from inside class: ', url);
   var queryStringWithNoFragment;
 
   // if there are any query params
@@ -40,24 +43,6 @@ export class Url {
     return JSON.parse(queryParamsJSON);
 
   }
-
-};
-
-  onUrlChange(fn) {
-
-  var currentLocation = location.href;
-
-  setInterval(function() {
-
-    if(location.href !== currentLocation) {
-
-      currentLocation = location.href;
-
-      fn();
-
-    }
-
-  }, 500);
 
 };
 
