@@ -1,5 +1,10 @@
-$bodyBackgroundColor: #ffffff;
+// third party
+@import "node_modules/flexboxgrid/dist/flexboxgrid.min";
+@import "node_modules/include-media/dist/_include-media";
 
-body{
-  background-color: $bodyBackgroundColor;
-}
+// base styles
+@import "base";
+@import "break-points";
+@import "typography";
+
+// component imports

@@ -1,7 +1,7 @@
 import { injectable, inject } from 'inversify';
 import 'reflect-metadata';
 import { IUrl } from '../ioc/interfaces/url.interface';
-import { TYPES } from '../ioc//types';
+import { TYPES } from '../ioc/types';
 
 @injectable()
 export class Url implements IUrl{

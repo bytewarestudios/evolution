@@ -20,7 +20,6 @@ const url = myContainer.get<IUrl>(TYPES.Url);
 
    public run(): void {
      const welcomeTitle = `Welcome to Evolution - Learning New Things`;
-     document.querySelector('#welcome-title').innerHTML = welcomeTitle;
 
      console.log('query params: ', url.queryParamsToObject(window.location.href));
    }
