@@ -56,7 +56,6 @@ const url = LibraryContainer.get<IUrl>(TYPES.URL);
      });
 
    }
-
  }
 
  const main = new Main().run();
