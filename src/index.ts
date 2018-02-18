@@ -2,7 +2,6 @@ import { Observable } from 'rxjs';
 import {serviceKeys } from './config/service-keys';
 import { HttpService } from './libs/services/http.service';
 import axios from 'axios';
-import  'reflect-metadata';
 import { LibraryContainer } from './ioc/libs-container/inversify.config';
 import { TYPES } from './ioc/libs-container/interfaces/types';
 import { IUrl } from './ioc/libs-container/interfaces/url.interface';
