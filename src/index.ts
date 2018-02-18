@@ -2,13 +2,12 @@ import { Observable } from 'rxjs';
 import {serviceKeys } from './config/service-keys';
 import { HttpService } from './libs/services/http.service';
 import axios from 'axios';
+import  'reflect-metadata';
+import { LibraryContainer } from './ioc/libs-container/inversify.config';
+import { TYPES } from './ioc/libs-container/interfaces/types';
+import { IUrl } from './ioc/libs-container/interfaces/url.interface';
 
-import { myContainer } from './ioc/inversify.config';
-import { TYPES } from './ioc/types';
-import { IUrl } from './ioc/interfaces/url.interface';
-
-const url = myContainer.get<IUrl>(TYPES.Url);
-
+const url = LibraryContainer.get<IUrl>(TYPES.URL);
 
  export class Main{
 
@@ -19,9 +18,9 @@ const url = myContainer.get<IUrl>(TYPES.Url);
    }
 
    public run(): void {
-     const welcomeTitle = `Welcome to Evolution - Learning New Things`;
+     const welcomeTitle = `Welcome to the Evolution of Learning New Things`;
 
-     console.log('query params: ', url.queryParamsToObject(window.location.href));
+     console.log('query params: ', url.queryParamsToObject(window.location.search));
    }
 
    public requestSamples(): void {

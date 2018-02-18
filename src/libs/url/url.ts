@@ -1,10 +1,7 @@
 import { injectable } from 'inversify';
-import 'reflect-metadata';
-// import { IUrl } from '../ioc/interfaces/url.interface';
-//import { TYPES } from '../ioc/types';
 
 @injectable()
-export class Url {
+export class URL {
 
   /**
    * @description: Converts query params to an object by passing in the query string
@@ -12,9 +9,9 @@ export class Url {
    * @param {string} queryString
    * @returns {{[p: string]: any}}
    */
-  public queryParamsToObject(queryString: string): {[key: string]: any} {
-    return (queryStringValues = queryString.substring(1)) =>
-      queryStringValues.split('&').map(queryStringValue => {
+  public queryParamsToObject(queryString: string): Array<{[key: string]: any}> {
+    const queryStringValues = queryString.substring(1);
+    return queryStringValues.split('&').map(queryStringValue => {
         const [key, value] = queryStringValue.split('=');
         return { [key]: decodeURIComponent(value) };
       });

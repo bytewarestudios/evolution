@@ -1,5 +1,5 @@
 const TYPES = {
-  Url: Symbol.for('IUrl'),
+  URL: Symbol.for('IUrl'),
 };
 
 export { TYPES }
