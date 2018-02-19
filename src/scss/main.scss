@@ -3,8 +3,10 @@
 @import "node_modules/include-media/dist/_include-media";
 
 // base styles
+@import "typography";
 @import "base";
 @import "break-points";
-@import "typography";
 
 // component imports
+@import "./components/form";
+@import "./components/button";

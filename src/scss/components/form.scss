@@ -1,0 +1,27 @@
+/* form.scss */
+$inputBorderRadius: 0.2rem;
+$inputInvalidColor: #F00;
+$inputInvalidBorderRadius: 0.05rem;
+$formFieldTextIndent: 0.3rem;
+
+form {
+  label {
+    font-family: $robotoBold;
+  }
+  input {
+    border-radius: $inputBorderRadius;
+    height: 1.5rem;
+    text-indent: $formFieldTextIndent;
+  }
+  input[type=email] {
+    width: 12rem;
+  }
+
+  .field--invalid {
+    border: $inputInvalidColor solid $inputInvalidBorderRadius;
+  }
+
+  .message--invalid {
+    font-family: $robotoLightItalic;
+  }
+}

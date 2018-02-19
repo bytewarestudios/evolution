@@ -10,6 +10,7 @@ const portNumber = 3000;
 module.exports = {
     entry: {
       './bundle.js': './src/index.ts',
+      './demo.js': './demos/index.ts',
       './main.css':'./src/scss/main.scss'
     },
     output: {
