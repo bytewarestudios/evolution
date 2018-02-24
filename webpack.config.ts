@@ -23,11 +23,11 @@ module.exports = {
       new CopyWebpackPlugin([
         {
           from: 'src/images',
-          to: 'images',
+          to: 'images'
         },
         {
           from: 'src/fonts',
-          to: 'fonts',
+          to: 'fonts'
         }
       ]),
       new HandlebarsPlugin({
