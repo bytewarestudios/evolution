@@ -18,9 +18,7 @@ const url = LibraryContainer.get<IUrl>(TYPES.URL);
 
    public run(): void {
      const welcomeTitle = `Welcome to the Evolution of Learning New Things`;
-     console.log('*******test********');
      console.log('query params: ', url.queryParamsToObject(window.location.search));
-
    }
 
    public requestSamples(): void {

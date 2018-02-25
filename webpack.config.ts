@@ -43,8 +43,7 @@ const mainConfig = {
         output: path.join(process.cwd(), baseDir, 'dist', '[name].html'),
         // globbed path to partials, where folder/filename is unique
         partials: [
-          path.join(process.cwd(),baseDir, 'src', 'partials', '**','**', '*.hbs'),
-          path.join(process.cwd(), baseDir, 'src', '**', '**', '*.hbs')
+          path.join(process.cwd(), baseDir, 'src', 'components', '**', '**', '*.hbs')
         ],
         onBeforeCompile: function (Handlebars, templateContent) {},
         onBeforeRender: function (Handlebars, data) {
