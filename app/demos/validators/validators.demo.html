@@ -3,18 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Validators Demo</title>
-  <link href="../dist/main.css" rel="stylesheet">
+  <link href="/main.css" rel="stylesheet">
 </head>
 
 <body>
-  <form name="demo-form" data-demo-form>
-    <label for="email-address">Email Address</label>
-    <div>
-      <input name="emailAddress" id="email-address" type="email" value="" />
-    </div>
-    <p class="message--invalid">Please provide a valid email address.</p>
-    <button type="submit" class="button--submit" data-submit-form>submit form</button>
-  </form>
-<script type="text/javascript" src="demo.js"></script>
+<script type="text/x-handlebars-template" data-demo-form-template>
+<form name="demo-form" data-demo-form novalidate>
+
+  <label for="email-address">Email Address</label>
+  <div>
+    <input name="emailAddress" id="email-address" type="email" value="" />
+  </div>
+    <p class="message--invalid hide" data-email-message-invalid>
+      sample message
+    </p>
+  <button type="submit" class="button--submit" data-submit-form>submit form</button>
+</form>
+</script>
+
+<div data-demo-form-target></div>
+<script type="text/javascript" src="/demo.js"></script>
+
 </body>
 </html>

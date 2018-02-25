@@ -1,12 +1,20 @@
-import { emailValidator } from '../decorators/validation.decorators';
+import { emailAddressValidator } from '../decorators/form/email-validation.decorator';
 
 export class EmailValidator {
 
   constructor() {}
 
-  @emailValidator
+  @emailAddressValidator
   public isEmailValid(emailAddress: string): boolean {
-    return true;
+    return this.isEmailValid(emailAddress);
+  }
+
+  public invalidEmailMessage(emailAddress: string, errorMessage: string): { isEmailValid: boolean, errorMessage: string } {
+    return {
+      isEmailValid: this.isEmailValid(emailAddress),
+      errorMessage
+    }
+
   }
 
 }

@@ -17,13 +17,12 @@
   },
   "scripts": {
     "start": "npm run start:dev",
-    "start:dev": "npm run build:dev && webpack-dev-server --open --inline --hot --watch --content-base dist/ --port=3000",
-    "start:prod": "npm run build:prod && webpack-dev-server --open --content-base dist/  --port=3000",
-    "start:demo": "npm run build:demo && webpack-dev-server --open --inline --hot --watch --content-base demos/ --port=3000",
+    "start:dev": "webpack-dev-server --content-base app/dist --open --inline && npm run build:dev ",
+    "start:prod": "npm run build:prod && webpack-dev-server --open --content-base app/dist ",
+    "start:demo": "npm run build:dev && webpack-dev-server  --open --inline --content-base app/demos --watch ",
     "test": "jest --coverage",
-    "build:dev": "webpack --env.dev",
-    "build:prod": "webpack --optimize-minimize ./src/index.ts --env.prod",
-    "build:demo": "webpack --optimize-minimize ./demos/index.ts"
+    "build:dev": "webpack --watch --env.dev",
+    "build:prod": "webpack --optimize-minimize ./src/index.ts --env.prod"
   },
   "author": "Larry J Lane",
   "license": "MIT",
@@ -48,16 +47,20 @@
     "node-gyp": "^3.6.2",
     "node-sass": "^4.7.2",
     "open-browser-webpack-plugin": "0.0.5",
+    "path": "^0.12.7",
     "rxjs": "^5.4.0",
     "sass-loader": "^6.0.5",
+    "style-loader": "^0.20.2",
     "ts-jest": "^20.0.10",
     "ts-loader": "^2.1.0",
+    "ts-node": "^5.0.0",
     "typescript": "^2.3.3",
     "webpack": "^2.5.1",
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
     "axios": "^0.16.1",
+    "handlebars": "^4.0.11",
     "inversify": "^4.10.0",
     "lodash": "^4.17.4",
     "reflect-metadata": "^0.1.12"

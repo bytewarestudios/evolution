@@ -44,6 +44,8 @@ crashlytics-build.properties
 fabric.properties
 
 #build files
-/dist/
+/app/dist/
+/app/demos/demo.js
+/app/demos/main.css
 /coverage/
 
