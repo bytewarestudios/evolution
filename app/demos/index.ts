@@ -1,14 +1,19 @@
 import { EmailValidator } from '../src/libs/validators/email.validator';
-import Handlebars from 'handlebars';
+import { HandlebarsCompilationService} from '../src/libs/services/handlebars-compilation.service';
 
 const __ = (selector) => {
   return document.querySelector(selector);
 }
 
-
-const compile = Handlebars.compile(document.querySelector('[data-demo-form-template]').innerHTML);
-
-__('[data-demo-form-target]').innerHTML = compile();
+const handlebarsCompilationService = new HandlebarsCompilationService();
+handlebarsCompilationService.compile(
+  '[data-demo-form-template]',
+  '[data-demo-form-target]'
+   ,{
+    formDemo: {
+      title: 'Form validation demo'
+    }
+  });
 
 document.querySelector('[data-demo-form-target] [data-demo-form]')
   .addEventListener('submit', ($event) => {
