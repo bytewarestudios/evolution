@@ -7,17 +7,18 @@
 </head>
 
 <body>
-<script type="text/x-handlebars-template" data-emo-form-template>
+<script type="text/x-handlebars-template" data-demo-form-template>
   <h2 title="form validation demo">{{ formDemo.title }}</h2>
 <form name="demo-form" data-demo-form novalidate>
 
-  <label for="email-address">Email Address</label>
+
   <div>
+    <label for="email-address">Email Address</label>
     <input name="emailAddress" id="email-address" type="email" value="" />
   </div>
-    <p class="message--invalid hide" data-email-message-invalid>
-      sample message
-    </p>
+  <p class="message--invalid hide" data-email-message-invalid>
+    sample message
+  </p>
   <button type="submit" class="button--submit" data-submit-form>submit form</button>
 </form>
 </script>
