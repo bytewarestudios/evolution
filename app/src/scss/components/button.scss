@@ -1,0 +1,15 @@
+
+.button--submit {
+  background: #00F;
+  background: linear-gradient(#00F, #00A);
+  border-radius: 1.5rem;
+  color: #FFF;
+  display:table-cell;
+  font-family: $robotoMedium;
+  font-size: 1.0rem;
+  outline: none;
+  padding: 0.5rem 1.5rem;
+  text-align: center;
+  vertical-align:middle;
+  white-space: nowrap;
+}

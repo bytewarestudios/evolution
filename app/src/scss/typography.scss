@@ -1,0 +1,51 @@
+/**
+  Add font imports and font related styling here.
+ */
+@font-face {
+  font-family: 'roboto-thin';
+  src: url('/fonts/roboto/Roboto-Thin-webfont.woff') format('woff'),
+       url('/fonts/roboto/Roboto-Thin-webfont.ttf')  format('truetype')
+}
+
+@font-face {
+  font-family: 'roboto-light';
+  src: url('/fonts/roboto/Roboto-Light-webfont.woff') format('woff'),
+       url('/fonts/roboto/Roboto-Light-webfont.ttf')  format('truetype')
+}
+@font-face {
+  font-family: 'roboto-light-italic';
+  src: url('/fonts/roboto/Roboto-LightItalic-webfont.woff') format('woff'),
+       url('/fonts/roboto/Roboto-LightItalic-webfont.ttf')  format('truetype')
+}
+
+@font-face {
+  font-family: 'roboto-regular';
+  src: url('/fonts/roboto/Roboto-Regular-webfont.woff') format('woff'),
+       url('/fonts/roboto/Roboto-Regular-webfont.ttf')  format('truetype')
+}
+
+@font-face {
+  font-family: 'roboto-medium';
+  src: url('/fonts/roboto/Roboto-Medium-webfont.woff') format('woff'),
+       url('/fonts/roboto/Roboto-Medium-webfont.ttf')  format('truetype')
+}
+
+@font-face {
+  font-family: 'roboto-bold';
+  src: url('/fonts/roboto/Roboto-Bold-webfont.woff') format('woff'),
+       url('/fonts/roboto/Roboto-Bold-webfont.ttf')  format('truetype')
+}
+
+@font-face {
+  font-family: 'roboto-black';
+  src: url('/fonts/roboto/Roboto-Black-webfont.woff') format('woff'),
+       url('/fonts/roboto/Roboto-Black-webfont.ttf')  format('truetype')
+}
+
+$robotoBlack: 'roboto-black', Arial, Helvetica, sans-serif;
+$robotoBold: 'roboto-bold', Arial, Helvetica, sans-serif;
+$robotoLight: 'roboto-light', Arial, Helvetica, sans-serif;
+$robotoLightItalic: 'roboto-light-italic', Arial, Helvetica, sans-serif;
+$robotoMedium: 'roboto-medium', Arial, Helvetica, sans-serif;
+$robotoRegular: 'roboto-regular', Arial, Helvetica, sans-serif;
+$robotoThin: 'roboto-thin', Arial, Helvetica, sans-serif;
