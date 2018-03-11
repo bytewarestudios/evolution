@@ -7,8 +7,8 @@
     "target": "es5",
     "jsx": "react",
     "allowJs": true,
-    "types" : ["core-js", "reflect-metadata"],
-    "lib": ["es6","es2015", "dom"],
+    "types" : ["core-js", "reflect-metadata","jasmine"],
+    "lib": ["es6", "dom"],
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
